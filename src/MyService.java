@@ -183,7 +183,7 @@ public class MyService extends BackgroundService {
 			        	}
 			        	
 			        	int currentapiVersion = android.os.Build.VERSION.SDK_INT;
-			        	Intent notificationIntent = new Intent(this, com.escola.EducaOnline.CordovaApp.class);
+			        	Intent notificationIntent = new Intent(this, com.escola.EducaOnline.MinhaNota.class);
 					    PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
 					    NotificationManager mNotificationManager = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
 				         
