@@ -29,13 +29,14 @@ under the License.
 				<param name="android-package" value="com.red_folder.phonegap.plugin.backgroundservice.BackgroundServicePlugin"/>
 			</feature>
 		</config-file>
-		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+		<config-file target="AndroidManifest.xml" parent="/*">
 			<service android:name="com.escola.EducaOnline.MyService" >
 				<intent-filter>
 					<action android:name="com.escola.EducaOnline.MyService" />
 				</intent-filter>
 			</service>
-
+		</config-file>
+		<config-file target="AndroidManifest.xml" parent="/*">
 			<receiver android:name="com.red_folder.phonegap.plugin.backgroundservice.BootReceiver" >
 				<intent-filter>
 					<action android:name="android.intent.action.BOOT_COMPLETED" >
