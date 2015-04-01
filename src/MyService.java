@@ -187,9 +187,9 @@ public class MyService extends BackgroundService {
 					    PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
 					    NotificationManager mNotificationManager = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
 				         
-					    if (currentapiVersion < android.os.Build.VERSION_CODES.HONEYCOMB) {
+					    if (currentapiVersion < android.os.Build.VERSION_CODES.HONEYCOMB){
 			        		Notification notification;
-				        	notification = new Notification(R.drawable.icone, texto, 0);
+				        	notification = new Notification(R.drawable.icon, texto, 0);
 			        		notification.setLatestEventInfo(this, "MINHA NOTA", texto, contentIntent);
 			        		notification.flags = Notification.FLAG_AUTO_CANCEL;
 			        		mNotificationManager.notify(0, notification);
@@ -199,7 +199,7 @@ public class MyService extends BackgroundService {
 							Builder notification = new Notification.Builder(this)
 						    .setContentTitle("MINHA NOTA")
 						    .setContentText(texto)
-						    .setSmallIcon(R.drawable.icone)
+						    .setSmallIcon(R.drawable.icon)
 						    // .setStyle(new Notification.BigTextStyle()
 						    // .bigText(texto))
 						    .setDefaults(-1)

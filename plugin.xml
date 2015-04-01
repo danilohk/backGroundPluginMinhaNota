@@ -15,7 +15,7 @@ KIND, either express or implied. See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-<plugin xmlns:android="http://schemas.android.com/apk/res/android" id="org.minha.nota.servico" version="0.0.3">
+<plugin xmlns:android="http://schemas.android.com/apk/res/android" id="org.minha.nota.servico" version="0.0.4">
 	<name>BackgroundServicePlugin</name>
 	<description>servico minha nota</description>
 	<license>Apache 2.0</license>
