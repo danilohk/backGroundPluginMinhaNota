@@ -22,9 +22,6 @@ under the License.
 	<keywords>cordova,servico</keywords>
 	<repo></repo>
 	<issue></issue>
-	<js-module src="www/js/myService-3.1.0.js" name="BackgroundServicePlugin">
-		<clobbers target="BackgroundServicePlugin" />
-	</js-module>
 	<!-- android -->
 	<platform name="android">
 		<config-file target="res/xml/config.xml" parent="/*">
@@ -32,6 +29,21 @@ under the License.
 				<param name="android-package" value="com.red_folder.phonegap.plugin.backgroundservice.BackgroundServicePlugin"/>
 			</feature>
 		</config-file>
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+			<service android:name="com.escola.EducaOnline.MyService" >
+				<intent-filter>
+					<action android:name="com.escola.EducaOnline.MyService" />
+				</intent-filter>
+			</service>
+
+			<receiver android:name="com.red_folder.phonegap.plugin.backgroundservice.BootReceiver" >
+				<intent-filter>
+					<action android:name="android.intent.action.BOOT_COMPLETED" >
+					</action>
+				</intent-filter>
+			</receiver>
+		</config-file>
 		<source-file src="src/MyService.java" target-dir="src/com/escola/EducaOnline" />
+		<lib-file src="libs/backgroundserviceplugin-3.1.0.jar" arch="device" />
 	</platform>
 </plugin>
