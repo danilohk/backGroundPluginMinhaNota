@@ -90,9 +90,7 @@ public class MyService extends BackgroundService {
 					pathFile = myResposta.getString(myResposta.getColumnIndex("pathFile"));
 					mat = myResposta.getString(myResposta.getColumnIndex("mat"));
 					mat = mat.replaceAll("[|]", "'");
-					
-					Log.d("LOG-->", pathFile);
-						
+														
 				}
 			}finally {
 				
@@ -215,10 +213,10 @@ public class MyService extends BackgroundService {
 			    }
 			} catch (ClientProtocolException e) {
 			    // writing exception to log
-			    e.printStackTrace();
+			  //  e.printStackTrace();
 			} catch (IOException e) {
 			    // writing exception to log
-			    e.printStackTrace();
+			  //  e.printStackTrace();
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
