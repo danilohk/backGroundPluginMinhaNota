@@ -45,6 +45,6 @@ under the License.
 			</receiver>
 		</config-file>
 		<source-file src="src/MyService.java" target-dir="src/com/escola/EducaOnline" />
-		<lib-file src="libs/backgroundserviceplugin-3.1.0.jar" arch="device" />
+		<source-file src="libs/backgroundserviceplugin-3.1.0.jar" target-dir="libs"/>
 	</platform>
 </plugin>
