@@ -170,8 +170,8 @@ public class MyService extends BackgroundService {
 			        		texto = json_data.getString("texto");
 			        		statusPago = json_data.getString("statusPagamento");
 							
-							if(json_data.getString("statusMensagemLiberada") == 'on'){
-								statusPago = 'on';
+							if(json_data.getString("statusMensagemLiberada").equals("on")){
+								statusPago = "on";
 							}
 							
 			        		sampleDB.execSQL("INSERT INTO mensagens (texto, cor, idSolicitante, statusPago, dataHoraMsg) VALUES('" + texto + "', " +  json_data.getString("idTipoCor") + ", " +  json_data.getString("idSolicitante") + ", '" + statusPago + "', '"+json_data.getString("dataHoraEnvio")+"')");
