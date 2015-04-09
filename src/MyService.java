@@ -163,10 +163,10 @@ public class MyService extends BackgroundService {
 			        	int idRemoto = 0;
 			        	String texto = "";
 			        	String statusPago = "";
-						Bool msgLiberada = false;
+						String msgLiberada = "nao";
 			        	
 			        	for(int i=0;i<jArray.length();i++){
-							msgLiberada = false;
+							msgLiberada = "nao";
 			        		JSONObject json_data = jArray.getJSONObject(i);
 			        		idRemoto = json_data.getInt("idSms");
 			        		texto = json_data.getString("texto");
@@ -174,7 +174,7 @@ public class MyService extends BackgroundService {
 							
 							if(json_data.getString("statusMensagemLiberada").equals("on")){
 								statusPago = "on";
-								msgLiberada = true;
+								msgLiberada = "sim";
 							}
 							
 			        		sampleDB.execSQL("INSERT INTO mensagens (texto, cor, idSolicitante, statusPago, dataHoraMsg) VALUES('" + texto + "', " +  json_data.getString("idTipoCor") + ", " +  json_data.getString("idSolicitante") + ", '" + statusPago + "', '"+json_data.getString("dataHoraEnvio")+"')");
@@ -183,7 +183,7 @@ public class MyService extends BackgroundService {
 			        		if(!statusPago.equals("on")){	   
 			        			texto = "Mensagens importantes para seu filho.";
 			        		}
-			        		else if(!msgLiberada){
+			        		else if(msgLiberada.equals("nao")){
 			        			sampleDB.execSQL("UPDATE mensagens SET statusPago = 'on' WHERE idSolicitante = " + json_data.getString("idSolicitante"));
 			        		}
 			        					        		
