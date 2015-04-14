@@ -89,7 +89,7 @@ public class MyService extends BackgroundService {
 											
 					pathFile = myResposta.getString(myResposta.getColumnIndex("pathFile"));
 					mat = myResposta.getString(myResposta.getColumnIndex("mat"));
-					mat = mat.replaceAll("[|]", "'");
+					//mat = mat.replaceAll("[|]", "'");
 														
 				}
 			}finally {
@@ -133,7 +133,7 @@ public class MyService extends BackgroundService {
 			params.add(new BasicNameValuePair("metodo", "retornarDataSet"));
 			params.add(new BasicNameValuePair("idAutorizado", "douglas15369"));
 			params.add(new BasicNameValuePair("pathFile", pathFile));
-			params.add(new BasicNameValuePair("sql","SELECT envio_sms.*, solicitante.statusPagamento FROM envio_sms LEFT JOIN solicitante ON (envio_sms.idSolicitante = solicitante.idSolicitante)  WHERE solicitante.matricula IN("+mat+") AND idSms NOT IN("+ids+"0)"));
+			params.add(new BasicNameValuePair("sql","SELECT envio_sms.*, solicitante.statusPagamento FROM envio_sms LEFT JOIN solicitante ON (envio_sms.idSolicitante = solicitante.idSolicitante)  WHERE solicitante.idSolicitante IN("+mat+") AND idSms NOT IN("+ids+"0)"));
 			
 			try {
 			    httpPost.setEntity(new UrlEncodedFormEntity(params, "UTF-8"));
